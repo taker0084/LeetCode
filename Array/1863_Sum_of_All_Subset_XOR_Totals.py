@@ -1,4 +1,3 @@
-from gc import collect
 from typing import List
 import collections
 
