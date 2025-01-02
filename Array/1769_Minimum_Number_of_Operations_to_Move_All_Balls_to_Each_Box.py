@@ -7,15 +7,16 @@ class Solution:
         pref = p = s = 0
         for i, el in enumerate(boxes):
             if el == '1':
-                pref += i
-                p += 1
+                pref += i  #boxes[0]に持ってくるのに何回操作が必要か
+                p += 1     #ボールの数
         for el in boxes:
-            answer.append(pref)
+            answer.append(pref)  #最初は全てboxes[0]に持ってくる
             if el == '1':
-                p -= 1
-                s += 1
-            pref = pref - p + s
+                p -= 1                  #残りの球数を１引く
+                s += 1                  #新たに移動させる球
+            pref = pref - p + s    #現在の累積コストから残りのボールの数を引き、移動したボールの数を加えます?
         return answer
+
         # out = []
         # boxes = [int(isBallExist) for isBallExist in boxes]
         # for i in range(len(boxes)):
