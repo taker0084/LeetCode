@@ -10,7 +10,7 @@ class Solution:
         count = 0
         for i in range(n):
             for k in range(i+1, n):
-                if prefixXOR[i] == prefixXOR[k + 1]:
+                if prefixXOR[i] == prefixXOR[k + 1]: #arr[i]^...^arr[j-1]とarr[j]^...arr[k]はイコールなので、XORをとると0になる→prefix[i]とprefix[k+1]は一致
                     count += (k - i)
         return count
 
