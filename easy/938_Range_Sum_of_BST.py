@@ -14,14 +14,16 @@ class Solution:
         ans = 0
         def dfs(node):
             nonlocal ans
-            if isRange(node):
+            if not node:
+                return 
+            if isRange(node.val):
                 ans += node.val
                 dfs(node.left)
                 dfs(node.right)
-            elif node<low:
-                dfs(node.left)
-            else:
+            elif node.val<low:
                 dfs(node.right)
+            else:
+                dfs(node.left)
         dfs(root)
         return ans
 
