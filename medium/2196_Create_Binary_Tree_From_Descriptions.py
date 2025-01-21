@@ -9,19 +9,18 @@ class TreeNode:
 class Solution:
     def createBinaryTree(self, descriptions: List[List[int]]) -> Optional[TreeNode]:
         num_dict = {}
-        children=set()
-        for description in descriptions:
-            if description[0] not in num_dict:
-                num_dict[description[0]] = TreeNode(description[0])
-            if description[1] not in num_dict:
-                num_dict[description[1]] = TreeNode(description[1])
+        root = None
+        for _,k,_ in descriptions:
+            num_dict[k] = TreeNode(k)
 
-            if description[2]:
-                num_dict[description[0]].left = num_dict[description[1]]
+        for p,_,_ in descriptions:
+            if p not in num_dict:
+                root = TreeNode(p)
+                num_dict[p] = root
+
+        for p,k,side in descriptions:
+            if side:
+                num_dict[p].left = num_dict[k]
             else:
-                num_dict[description[0]].right = num_dict[description[1]]
-            children.add(description[1])
-        for num in num_dict:
-            if num not in children:
-                return num_dict[num]
-        return None
+                num_dict[p].right = num_dict[k]
+        return root
