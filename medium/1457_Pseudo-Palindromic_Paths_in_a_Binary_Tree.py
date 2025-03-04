@@ -1,4 +1,4 @@
-from collections import defaultdict
+from collections import defaultdict, deque
 from typing import Optional
 
 
@@ -11,10 +11,10 @@ class TreeNode:
 class Solution:
     def pseudoPalindromicPaths (self, root: Optional[TreeNode]) -> int:
         count = 0
-        stack = [(root, 0)]
+        queue = deque([(root, 0)])
 
-        while stack:
-            node, path = stack.pop()
+        while queue:
+            node, path = queue.popleft()
 
             if node:
                 # 含まれている値を調べる(含まれているビットが1になっている)
@@ -25,7 +25,7 @@ class Solution:
                     if path & (path - 1) == 0:
                         count += 1
                 else:
-                    stack.append((node.right, path))
-                    stack.append((node.left, path))
+                    queue.append((node.left, path))
+                    queue.append((node.right, path))
 
         return count
