@@ -1,6 +1,7 @@
 # Definition for a binary tree node.
+import pytest
 class TreeNode:
-    def __init__(self, x):
+    def __init__(self, x, left=None, right=None):
         self.val = x
         self.left = None
         self.right = None
@@ -55,3 +56,24 @@ class Solution:
         if count >= 2:
           self.parent = node
         return count == 1
+#------Test CASES------
+@pytest.fixture
+def solution():
+  return Solution()
+
+def test_lowestCommonAncestor(solution):
+  #example1
+  root = TreeNode(3, TreeNode(5, TreeNode(6), TreeNode(2, TreeNode(7), TreeNode(4))), TreeNode(1, TreeNode(0), TreeNode(8)))
+  p = TreeNode(5)
+  q = TreeNode(1)
+  assert solution.lowestCommonAncestor(root, p, q).val == 3
+  #example2
+  root = TreeNode(3, TreeNode(5, TreeNode(6), TreeNode(2, TreeNode(7), TreeNode(4))), TreeNode(1, TreeNode(0), TreeNode(8)))
+  p = TreeNode(5)
+  q = TreeNode(4)
+  assert solution.lowestCommonAncestor(root, p, q).val == 5
+  #example3
+  root = TreeNode(1, TreeNode(2), TreeNode(3))
+  p = TreeNode(2)
+  q = TreeNode(3)
+  assert solution.lowestCommonAncestor(root, p, q).val == 1

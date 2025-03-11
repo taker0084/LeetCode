@@ -19,7 +19,7 @@ class Solution:
       Do not return anything, modify root in-place instead.
 
       Args:
-          root (Optional[TreeNode]): _description_
+          root (Optional[TreeNode]): a root of tree
       """
       if not root:
         return
