@@ -10,10 +10,10 @@ class Solution:
         """
         summaryRanges() returns small sorted list from List
         Args:
-            nums (List[int]): _description_
+            nums (List[int]): list of value
 
         Returns:
-            List[str]: _description_
+            List[str]: small sorted list using "->"(string)
         """
 
         ans = []
@@ -37,10 +37,10 @@ class Solution:
         """
         translate List[int] to string "a -> b"
         Args:
-            small_sorted_list (List[int]): _description_
+            small_sorted_list (List[int]): list of sorted list(int)
 
         Returns:
-            _type_: _description_
+            str: traced sorted list to string (e.g. 1 -> 3)
         """
         if not small_sorted_list:
           return ""

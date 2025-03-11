@@ -15,10 +15,10 @@ class Solution:
       sumNumbers returns sum of all paths
 
       Args:
-          root (Optional[TreeNode]): _description_
+          root (Optional[TreeNode]): root of binary tree
 
       Returns:
-          int: _description_
+          int: sum of all path
       """
       if not root:
         return 0
@@ -34,16 +34,16 @@ class Solution:
         total += int(path)
       return total
 
-    def add_value_to_path(self, node, path_list):
+    def add_value_to_path(self, node: 'TreeNode', path_list: list[str]) -> list[str]:
       """
       add_value_to_path adds value to all path in routes
 
       Args:
-          node (_type_): _description_
-          path_list (_type_): _description_
+          node ('TreeNode'): _description_
+          path_list (list[str]): all path of tree from root to leaf
 
       Returns:
-          _type_: _description_
+          list[str]: append node.val to path_list
       """
       if not path_list:
         return [str(node.val)]

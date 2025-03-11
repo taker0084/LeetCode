@@ -15,10 +15,10 @@ class Solution:
         findFrequentTreeSum returns sum of subtree which occurring the most
 
         Args:
-            root (Optional[TreeNode]): _description_
+            root (Optional[TreeNode]): a root of tree
 
         Returns:
-            List[int]: _description_
+            List[int]: list of value which appears the most
         """
         if not root:
           return []

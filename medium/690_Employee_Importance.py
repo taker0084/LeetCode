@@ -16,11 +16,11 @@ class Solution:
         get importance sum of employee and all subordinates
 
         Args:
-            employees (List[&#39;Employee&#39;]): _description_
-            id (int): _description_
+            employees (List['Employee']): all employee list
+            id (int): employee's id
 
         Returns:
-            int: _description_
+            int: all profit of employee[id]
         """
         if not employees:
             return 0
@@ -47,10 +47,10 @@ class Solution:
       make employees' dict by their list
 
       Args:
-          employees (_type_): _description_
+          employees (_type_): an item in employees
 
       Returns:
-          dict: _description_
+          dict: employees' list
       """
       employee_dict = collections.defaultdict(Employee)
       for employee in employees:
