@@ -19,7 +19,6 @@ class Solution:
         ans = []
         if not nums:
           return ans
-        next_expected_num = nums[0]
         small_sorted_list = []
         nums_size = len(nums)
 
@@ -55,17 +54,16 @@ def solution():
   return Solution()
 
 def test_summary_ranges(solution):
-    """_summary_
-
-    Args:
-        solution (_type_): _description_
+    """
+    Example1: basic example
+    Example2: if root is none
     """
     #Example1
     nums = [0,1,2,4,5,7]
     assert solution.summaryRanges(nums) == ["0->2","4->5","7"]
     #Example2
-    nums = [0,2,3,4,6,8,9]
-    assert solution.summaryRanges(nums) == ["0","2->4","6","8->9"]
+    nums = []
+    assert solution.summaryRanges(nums) == []
 
 def test_convert_summary_list(solution):
   assert solution.convert_summary_list([0]) == "0"
