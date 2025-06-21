@@ -11,6 +11,16 @@ class ListNode:
 
 class Solution:
     def addTwoNumbers(self, l1: Optional[ListNode], l2: Optional[ListNode]) -> Optional[ListNode]:
+        """
+        this function adds two numbers represented by linked lists
+
+        Args:
+            l1 (Optional[ListNode]): first linked list
+            l2 (Optional[ListNode]): second linked list
+
+        Returns:
+            Optional[ListNode]: linked list representing the sum of the two numbers
+        """
         if not l1:
             return l2
         if not l2:
